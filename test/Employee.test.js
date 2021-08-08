@@ -1,6 +1,7 @@
 // Imports the Employee class
 const Employee = require("../lib/Employee");
 
+// Tests the constructor class of Employee
 describe("Employee class", () => {
   describe("initialization", () => {
     it("should check if the initialized object is an instance of the Employee class", () => {
