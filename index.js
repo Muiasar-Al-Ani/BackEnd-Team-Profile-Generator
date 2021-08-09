@@ -45,34 +45,84 @@ const engineerQuestion = [
     name: "githubUserName",
   },
 ];
-const internQuestion = {
-  type: "input",
-  message: "Please enter the intern's School's name:",
-  name: "school",
+const internQuestion = [
+  {
+    type: "input",
+    message: "Please enter the intern's School's name:",
+    name: "school",
+  },
+];
+const addAnotherMemberQuestion = [
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Yes", "No"],
+    name: "addMoreMembers",
+  },
+];
+
+const addTeamMembers = async () => {
+  let employee = await inquirer.prompt(employeesQuestions);
+  try {
+    switch (employee.role) {
+      case "Manager":
+        let officeNumberObj = await inquirer.prompt(managerQuestion);
+        const manager = new Manager(
+          employee.name,
+          employee.id,
+          employee.email,
+          officeNumberObj.officeNumber
+        );
+        teamMembers.push(manager);
+
+        break;
+      case "Engineer":
+        let gitHubObj = await inquirer.prompt(engineerQuestion);
+        const engineer = new Engineer(
+          employee.name,
+          employee.id,
+          employee.email,
+          gitHubObj.githubUserName
+        );
+        teamMembers.push(engineer);
+        break;
+      case "Intern":
+        let schoolObj = await inquirer.prompt(internQuestion);
+        const intern = new Intern(
+          employee.name,
+          employee.id,
+          employee.email,
+          schoolObj.school
+        );
+        teamMembers.push(intern);
+        break;
+      default:
+        "";
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-const addTeamMembers = () => {
-  
-  inquirer
-    .prompt(employeesQuestions)
-    .then(({ name, role, id, email }) => {
-      if (role === "Manager") {
-        inquirer.prompt(managerQuestion).then(({ officeNumber }) => {
-          newTeamMember = new Manager(name, id, email, officeNumber);
-          console.log(newTeamMember);
-        });
-      } else if (role === "Engineer") {
-        inquirer.prompt(engineerQuestion).then(({ githubUserName }) => {
-          newTeamMember = new Engineer(name, id, email, githubUserName);
-          console.log(newTeamMember);
-        });
-      } else {
-        inquirer.prompt(internQuestion).then(({ school }) => {
-          newTeamMember = new Intern(name, id, email, school);
-          
-        });
-      }
-    })
+const addMoreTeamMembers = async () => {
+  let addMember = "Yes";
+  let addMoreMembersObj;
+  while (addMember === "Yes") {
+    addMoreMembersObj = await inquirer.prompt(addAnotherMemberQuestion);
+    addMember = await addMoreMembersObj.addMoreMembers;
+    if (addMember === "Yes") {
+      await addTeamMembers();
+    }
+  }
 };
 
-addTeamMembers();
+const generateHtml = () => {
+  console.log(teamMembers);
+};
+
+const init = async () => {
+  await addTeamMembers();
+  await addMoreTeamMembers();
+  await generateHtml()
+};
+init();
