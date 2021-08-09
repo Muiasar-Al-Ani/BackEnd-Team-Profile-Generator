@@ -8,7 +8,7 @@ describe("Engineer class", () => {
       const newEngineer = new Engineer();
       expect(newEngineer instanceof Engineer).toEqual(true);
     });
-    it("should check if the given employee name, ID, email, and the GitHub user name gets processed properly through the constructor", () => {
+    it("should check if the given Engineer name, ID, email, and the GitHub user name gets processed properly through the constructor", () => {
       const name = "Muiasar";
       const newID = "12345";
       const myEmail = "muiasar2012@gmail.com";
