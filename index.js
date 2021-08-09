@@ -31,7 +31,7 @@ const employeesQuestions = [
   },
 ];
 
-const ManagerQuestion = [
+const managerQuestion = [
   {
     type: "input",
     message: "Please enter the manager's officeNumber:",
@@ -52,10 +52,27 @@ const internQuestion = {
 };
 
 const addTeamMembers = () => {
-  let newTeamMember;
-  inquirer.prompt(employeesQuestions).then(({name, role, id, email}) => {
-    if (role === Manager){
-      inquirer.prompt(ManagerQuestion).then(({}))
-    }
-  }) 
+  
+  inquirer
+    .prompt(employeesQuestions)
+    .then(({ name, role, id, email }) => {
+      if (role === "Manager") {
+        inquirer.prompt(managerQuestion).then(({ officeNumber }) => {
+          newTeamMember = new Manager(name, id, email, officeNumber);
+          console.log(newTeamMember);
+        });
+      } else if (role === "Engineer") {
+        inquirer.prompt(engineerQuestion).then(({ githubUserName }) => {
+          newTeamMember = new Engineer(name, id, email, githubUserName);
+          console.log(newTeamMember);
+        });
+      } else {
+        inquirer.prompt(internQuestion).then(({ school }) => {
+          newTeamMember = new Intern(name, id, email, school);
+          
+        });
+      }
+    })
 };
+
+addTeamMembers();
