@@ -15,10 +15,12 @@ const {
   addAnotherMemberQuestion,
 } = require("./src/questions");
 
+// Creates arrays for all roles to be pushed in an organized way
 const managerArr = [];
 const engineerArr = [];
 const internArr = [];
 
+// Creates objects for each employee, and pushes in a separate array for each role asynchronously
 const addTeamMembers = async () => {
   let employee = await inquirer.prompt(employeesQuestions);
   try {
@@ -62,6 +64,7 @@ const addTeamMembers = async () => {
   }
 };
 
+// Checks if the user needs to add another employee
 const addMoreTeamMembers = async () => {
   let addMember = "Yes";
   let addMoreMembersObj;
@@ -74,6 +77,7 @@ const addMoreTeamMembers = async () => {
   }
 };
 
+// Initializes and controls the flow of the Application
 const init = async () => {
   try {
     await addTeamMembers();
@@ -89,4 +93,6 @@ const init = async () => {
     console.error(err);
   }
 };
+
+// Initializes the Application
 init();

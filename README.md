@@ -33,18 +33,19 @@ npm install
 
 
 ## Usage : 
-The user needs to install all the dependencies using the "npm install" or "npm i" after that the user can run the app in the node environment using the command "node index.js" and the user will be prompted with question to build his team. The choices would be Manager, Engineer and Intern and the user could build unlimited amount of cards to satisfy his team size.
+The user needs to install all the dependencies using the "npm install" or "npm i" after that the user can run the app in the node environment using the command "node index.js" and the user will be prompted with question to build his team. The choices would be Manager, Engineer and Intern and the user could build unlimited amount of cards to satisfy his team size. There are validation functions built into the code for each of the command line inputs, so user won't input invalid data in the inputs and will prompt the user to enter valid information.
 
 ## Technologies : 
 
-- HTML.
+-  HTML.
 -  MaterializeCSS.
 -  JavaScript.
 -  Node.js.
--  Inquirer npm package.
--  Colors npm package.
 -  FS Node.js module.
 -  Promisify Node.js module.
+-  Inquirer npm package.
+-  Colors npm package.
+
 
 ## Screen shots : 
 ![ScreenShot](./images/tests.png)

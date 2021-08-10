@@ -1,3 +1,4 @@
+// Creates a card with the manager's info each time it's called
 const renderManagerCards = managerArr => {
   let cards = "";
   for (const manager of managerArr) {
@@ -24,6 +25,8 @@ const renderManagerCards = managerArr => {
   }
   return cards;
 };
+
+// Creates a card with the engineer's info each time it's called
 const renderEngineerCards = engineerArr => {
   let cards = "";
   for (const engineer of engineerArr) {
@@ -50,6 +53,8 @@ const renderEngineerCards = engineerArr => {
   }
   return cards;
 };
+
+// // Creates a card with the intern's info each time it's called
 const renderInternCards = internArr => {
   let cards = "";
   for (const intern of internArr) {
@@ -77,6 +82,8 @@ const renderInternCards = internArr => {
   return cards;
 };
 
+
+// Creates most of the HTML and calls the cards generator functions to finish rendering
 const generateHTML = (managerArr, engineerArr, internArr) => {
   return `
 <!DOCTYPE html>
@@ -169,4 +176,5 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
 `;
 };
 
+// Exports the generateHTML function
 module.exports = generateHTML;
