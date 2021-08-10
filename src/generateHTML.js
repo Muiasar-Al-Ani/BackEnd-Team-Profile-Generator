@@ -36,7 +36,7 @@ const renderEngineerCards = engineerArr => {
         <span class="card-title">
           ${engineer.name}
           <br>
-          <span class="material-icons"> manage_accounts </span>  
+          <span class="material-icons-outlined">engineering</span> 
           Engineer
       </div>
       <div class="card-content">
@@ -50,7 +50,32 @@ const renderEngineerCards = engineerArr => {
   }
   return cards;
 };
-const renderInternCards = internArr => {};
+const renderInternCards = internArr => {
+  let cards = "";
+  for (const intern of internArr) {
+    console.log(intern);
+    cards += `
+    <div class="col s12 m6 l4">
+    <div class="card grey darken-2 hoverable z-depth-2">
+      <div class="card-image">
+        <img src="../images/title.jpg" />
+        <span class="card-title">
+          ${intern.name}
+          <br>
+          <span class="material-icons-outlined">school</span>  
+          Intern
+      </div>
+      <div class="card-content">
+        <h6>ID : ${intern.id}</h6>
+        <h6>Email : <a href="mailto:${intern.email}">${intern.email}</a></h6>
+        <h6>School : ${intern.school}</h6>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  return cards;
+};
 
 const generateHTML = (managerArr, engineerArr, internArr) => {
   console.log("hello");
