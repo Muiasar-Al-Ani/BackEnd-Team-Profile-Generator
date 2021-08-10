@@ -5,9 +5,10 @@ const employeesQuestions = [
     message: "Please enter the team member's name:",
     name: "name",
     validate: name => {
-      return name.length > 1
+        valid = /^[a-z]*$/gi.test(name);
+        return valid
         ? true
-        : (console.log("   Please provide an employee name!".red), false);
+        : console.log("   Please provide an employee name!".red);
     },
   },
   {
@@ -21,9 +22,10 @@ const employeesQuestions = [
     message: "Please enter the team member's ID:",
     name: "id",
     validate: id => {
-      return isNaN(id)
+      valid = /^[0-9]*$/g.test(id);
+      return valid
         ? true
-        : (console.log("   Please provide an valid employee ID!".red), false);
+        : console.log("   Please provide an valid numerical employee ID!".red);
     },
   },
   {
@@ -32,10 +34,9 @@ const employeesQuestions = [
     name: "email",
     validate: email => {
       valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-
       return valid
         ? true
-        : (console.log("   Please provide a valid email address!".red), false);
+        : console.log("   Please provide a valid email address!".red);
     },
   },
 ];
@@ -46,10 +47,11 @@ const managerQuestion = [
     message: "Please enter the manager's officeNumber:",
     name: "officeNumber",
     validate: officeNumber => {
-        return isNaN(officeNumber)
-          ? true
-          : (console.log("   Please provide an valid Manager office number!".red), false);
-      },
+        valid = /^[0-9]*$/g.test(officeNumber);
+        return valid
+        ? true
+        : console.log("   Please provide an valid Manager office number!".red);
+    },
   },
 ];
 const engineerQuestion = [
@@ -58,11 +60,10 @@ const engineerQuestion = [
     message: "Please enter the engineer's GitHub user name:",
     name: "githubUserName",
     validate: githubUserName => {
-        return githubUserName.length > 1
-          ? true
-          : (console.log("   Please provide a GitHub Username!".red), false);
-      },
-
+      return githubUserName.length > 1
+        ? true
+        : console.log("   Please provide a GitHub Username!".red);
+    },
   },
 ];
 const internQuestion = [
@@ -71,10 +72,10 @@ const internQuestion = [
     message: "Please enter the intern's School's name:",
     name: "school",
     validate: school => {
-        return school.length > 1
-          ? true
-          : (console.log("   Please provide a School name!".red), false);
-      },
+      return school.length > 1
+        ? true
+        : console.log("   Please provide a School name!".red);
+    },
   },
 ];
 const addAnotherMemberQuestion = [

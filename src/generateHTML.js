@@ -1,7 +1,7 @@
 const renderManagerCards = managerArr => {
   let cards = "";
   for (const manager of managerArr) {
-    console.log(manager);
+   
     cards += `
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
@@ -27,7 +27,7 @@ const renderManagerCards = managerArr => {
 const renderEngineerCards = engineerArr => {
   let cards = "";
   for (const engineer of engineerArr) {
-    console.log(engineer);
+    
     cards += `
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
@@ -42,7 +42,7 @@ const renderEngineerCards = engineerArr => {
       <div class="card-content">
         <h6>ID : ${engineer.id}</h6>
         <h6>Email : <a href="mailto:${engineer.email}">${engineer.email}</a></h6>
-        <h6>GitHub : <a href="https://github.com/${engineer.gitHubUserName}">${engineer.gitHubUserName}</a></h6>
+        <h6>GitHub : <a href="https://github.com/${engineer.gitHubUserName}" target="_blank">${engineer.gitHubUserName}</a></h6>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@ const renderEngineerCards = engineerArr => {
 const renderInternCards = internArr => {
   let cards = "";
   for (const intern of internArr) {
-    console.log(intern);
+ 
     cards += `
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
@@ -78,7 +78,6 @@ const renderInternCards = internArr => {
 };
 
 const generateHTML = (managerArr, engineerArr, internArr) => {
-  console.log("hello");
   return `
 <!DOCTYPE html>
 <html lang="en">
