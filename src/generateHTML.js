@@ -36,13 +36,13 @@ const renderEngineerCards = engineerArr => {
         <span class="card-title">
           ${engineer.name}
           <br>
-          <span class="material-icons-outlined">engineering</span> 
+          <span class="material-icons">engineering</span>
           Engineer
       </div>
       <div class="card-content">
         <h6>ID : ${engineer.id}</h6>
         <h6>Email : <a href="mailto:${engineer.email}">${engineer.email}</a></h6>
-        <h6>GitHub : <a href="https://github.com/${engineer.githubUserName}">${engineer.githubUserName}</a></h6>
+        <h6>GitHub : <a href="https://github.com/${engineer.gitHubUserName}">${engineer.gitHubUserName}</a></h6>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@ const renderInternCards = internArr => {
         <span class="card-title">
           ${intern.name}
           <br>
-          <span class="material-icons-outlined">school</span>  
+          <span class="material-icons">school</span>  
           Intern
       </div>
       <div class="card-content">

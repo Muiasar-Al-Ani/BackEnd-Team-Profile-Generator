@@ -4,67 +4,20 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require('util');
+const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 const generateHTML = require("./src/generateHTML");
+const {
+  employeesQuestions,
+  managerQuestion,
+  engineerQuestion,
+  internQuestion,
+  addAnotherMemberQuestion,
+} = require("./src/questions");
 
 const managerArr = [];
 const engineerArr = [];
 const internArr = [];
-
-const employeesQuestions = [
-  {
-    type: "input",
-    message: "Please enter the team member's name:",
-    name: "name",
-  },
-  {
-    type: "list",
-    message: "Please enter the team member's role:",
-    choices: ["Manager", "Engineer", "Intern"],
-    name: "role",
-  },
-  {
-    type: "input",
-    message: "Please enter the team member's ID:",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "Please enter the team member's email address:",
-    name: "email",
-  },
-];
-
-const managerQuestion = [
-  {
-    type: "input",
-    message: "Please enter the manager's officeNumber:",
-    name: "officeNumber",
-  },
-];
-const engineerQuestion = [
-  {
-    type: "input",
-    message: "Please enter the engineer's GitHub user name:",
-    name: "githubUserName",
-  },
-];
-const internQuestion = [
-  {
-    type: "input",
-    message: "Please enter the intern's School's name:",
-    name: "school",
-  },
-];
-const addAnotherMemberQuestion = [
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Yes", "No"],
-    name: "addMoreMembers",
-  },
-];
 
 const addTeamMembers = async () => {
   let employee = await inquirer.prompt(employeesQuestions);
