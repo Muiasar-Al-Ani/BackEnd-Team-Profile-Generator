@@ -24,7 +24,32 @@ const renderManagerCards = managerArr => {
   }
   return cards;
 };
-const renderEngineerCards = engineerArr => {};
+const renderEngineerCards = engineerArr => {
+  let cards = "";
+  for (const engineer of engineerArr) {
+    console.log(engineer);
+    cards += `
+    <div class="col s12 m6 l4">
+    <div class="card grey darken-2 hoverable z-depth-2">
+      <div class="card-image">
+        <img src="../images/title.jpg" />
+        <span class="card-title">
+          ${engineer.name}
+          <br>
+          <span class="material-icons"> manage_accounts </span>  
+          Engineer
+      </div>
+      <div class="card-content">
+        <h6>ID : ${engineer.id}</h6>
+        <h6>Email : <a href="mailto:${engineer.email}">${engineer.email}</a></h6>
+        <h6>GitHub : <a href="https://github.com/${engineer.githubUserName}">${engineer.githubUserName}</a></h6>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  return cards;
+};
 const renderInternCards = internArr => {};
 
 const generateHTML = (managerArr, engineerArr, internArr) => {
