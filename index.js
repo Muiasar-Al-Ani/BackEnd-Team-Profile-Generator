@@ -4,6 +4,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateHTML = require("./src/generateHTML");
 
 const teamMembers = [];
 
@@ -116,13 +117,11 @@ const addMoreTeamMembers = async () => {
   }
 };
 
-const generateHtml = () => {
-  console.log(teamMembers);
-};
+
 
 const init = async () => {
   await addTeamMembers();
   await addMoreTeamMembers();
-  await generateHtml()
+  await generateHTML(teamMembers)
 };
 init();
