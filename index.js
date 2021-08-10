@@ -4,11 +4,13 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require('util');
+const writeFileAsync = util.promisify(fs.writeFile);
 const generateHTML = require("./src/generateHTML");
 
-const managerArr = []
+const managerArr = [];
 const engineerArr = [];
-const internArr  = [];
+const internArr = [];
 
 const employeesQuestions = [
   {
@@ -119,11 +121,19 @@ const addMoreTeamMembers = async () => {
   }
 };
 
-
-
 const init = async () => {
-  await addTeamMembers();
-  await addMoreTeamMembers();
-  await generateHTML(managerArr, engineerArr, internArr)
+  try {
+    await addTeamMembers();
+    await addMoreTeamMembers();
+    await writeFileAsync(
+      "./dist/index.html",
+      generateHTML(managerArr, engineerArr, internArr)
+    );
+    console.log(
+      "Your Team Profile has been generated successfully in the dist directory as index.html"
+    );
+  } catch (err) {
+    console.error(err);
+  }
 };
 init();
