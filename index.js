@@ -6,7 +6,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateHTML = require("./src/generateHTML");
 
-const teamMembers = [];
+const managerArr = []
+const engineerArr = [];
+const internArr  = [];
 
 const employeesQuestions = [
   {
@@ -74,7 +76,7 @@ const addTeamMembers = async () => {
           employee.email,
           officeNumberObj.officeNumber
         );
-        teamMembers.push(manager);
+        managerArr.push(manager);
 
         break;
       case "Engineer":
@@ -85,7 +87,7 @@ const addTeamMembers = async () => {
           employee.email,
           gitHubObj.githubUserName
         );
-        teamMembers.push(engineer);
+        engineerArr.push(engineer);
         break;
       case "Intern":
         let schoolObj = await inquirer.prompt(internQuestion);
@@ -95,7 +97,7 @@ const addTeamMembers = async () => {
           employee.email,
           schoolObj.school
         );
-        teamMembers.push(intern);
+        internArr.push(intern);
         break;
       default:
         "";
@@ -122,6 +124,6 @@ const addMoreTeamMembers = async () => {
 const init = async () => {
   await addTeamMembers();
   await addMoreTeamMembers();
-  await generateHTML(teamMembers)
+  await generateHTML(managerArr, engineerArr, internArr)
 };
 init();

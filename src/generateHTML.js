@@ -1,20 +1,34 @@
-const renderManagerCards = managerArr => {};
+const renderManagerCards = managerArr => {
+  let cards = "";
+  for (const manager of managerArr) {
+    console.log(manager);
+    cards += `
+    <div class="col s12 m6 l4">
+    <div class="card grey darken-2 hoverable z-depth-2">
+      <div class="card-image">
+        <img src="../images/title.jpg" />
+        <span class="card-title">
+          ${manager.name}
+          <br>
+          <span class="material-icons"> manage_accounts </span>  
+          Manager
+      </div>
+      <div class="card-content">
+        <h6>ID : ${manager.id}</h6>
+        <h6>Email : <a href="mailto:${manager.email}">${manager.email}</a></h6>
+        <h6>Office Number : ${manager.officeNumber}</h6>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  return cards;
+};
 const renderEngineerCards = engineerArr => {};
 const renderInternCards = internArr => {};
 
-const renderTeamCards = teamArr => {
-  const managerArr = teamArr.filter(teamMember => teamMember === "Manager");
-  const engineerArr = teamArr.filter(teamMember => teamMember === "Engineer");
-  const internArr = teamArr.filter(teamMember => teamMember === "Intern");
-
-  return `
-  ${renderManagerCards(managerArr)}
-  ${renderEngineerCards(engineerArr)}
-  ${renderInternCards(internArr)}
-  `;
-};
-
-const generateHTML = teamMembers => {
+const generateHTML = (managerArr, engineerArr, internArr) => {
+  console.log("hello");
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +53,7 @@ const generateHTML = teamMembers => {
   <!-- Header Element -->
   <header class="navbar-fixed ">
     <nav id="navbar ">
-      <div class="nav-wrapper valign-wrapper grey darken-3">
+      <div class="nav-wrapper valign-wrapper grey darken-3 z-depth-5">
         <a href="" class="brand-logo center">My Team</a>
         
       </div>
@@ -53,9 +67,9 @@ const generateHTML = teamMembers => {
   </div>
   <div class="section grey darken-3 white-text">
     <div class="row container">
-      <div class="col s12 m10 l3">
-        ${renderTeamCards(teamMembers)}
-      </div>
+        ${renderManagerCards(managerArr)}
+        ${renderEngineerCards(engineerArr)}
+        ${renderInternCards(internArr)}
       </div>
     </div>
     <div class="parallax-container">
@@ -85,7 +99,7 @@ const generateHTML = teamMembers => {
         </div>
       </div>
     </div>
-    <div class="footer-copyright grey darken-2">
+    <div class="footer-copyright grey darken-2 z-depth-5">
       <div class="container">© 2021 My Team</div>
     </div>
   </footer>
