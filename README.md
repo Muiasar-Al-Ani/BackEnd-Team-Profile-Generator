@@ -45,6 +45,7 @@ The user needs to install all the dependencies using the "npm install" or "npm i
 -  Promisify Node.js module.
 -  Inquirer npm package.
 -  Colors npm package.
+-  Jest npm package. 
 
 
 ## Screen shots : 
