@@ -1,3 +1,4 @@
+// Imports the colors package needed for to change the color of the console log to red color
 var colors = require("colors");
 const employeesQuestions = [
   {
@@ -5,7 +6,7 @@ const employeesQuestions = [
     message: "Please enter the team member's name:",
     name: "name",
     validate: name => {
-        valid = /^[a-z]*$/gi.test(name);
+        valid = /^[a-z]/gi.test(name);
         return valid
         ? true
         : console.log("   Please provide an employee name!".red);
