@@ -48,9 +48,11 @@ The user needs to install all the dependencies using the "npm install" or "npm i
 
 
 ## Screen shots : 
-![ScreenShot](./images/tests.png)
+![ScreenShot](https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/screen-shots/screen-shot-1.png)
+![ScreenShot](https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/screen-shots/screen-shot-2.png)
+![ScreenShot](https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/screen-shots/MyTeam.jpg)
 
-[The Demo Video]()
+[The Demo Video](https://drive.google.com/file/d/1KRs-YyCd8WXjG43c4HtXI4rxYIm4l061/view?usp=sharing)
 
 ## Credits :
 
@@ -69,7 +71,7 @@ After installing all the dependencies user can run command bellow &#8595;
 npm run test
 ```
 And the tests should pass as bellow &#8595;
-![ScreenShot](./images/tests.png)
+![ScreenShot](https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/tests.png)
 
 ## Questions : 
 If you have any Question please feel free to contact me:

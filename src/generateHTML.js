@@ -7,7 +7,7 @@ const renderManagerCards = managerArr => {
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
       <div class="card-image">
-        <img src="../images/title.jpg" />
+        <img src="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/title.jpg" />
         <span class="card-title">
           ${manager.name}
           <br>
@@ -35,7 +35,7 @@ const renderEngineerCards = engineerArr => {
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
       <div class="card-image">
-        <img src="../images/title.jpg" />
+        <img src="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/title.jpg" />
         <span class="card-title">
           ${engineer.name}
           <br>
@@ -63,7 +63,7 @@ const renderInternCards = internArr => {
     <div class="col s12 m6 l4">
     <div class="card grey darken-2 hoverable z-depth-2">
       <div class="card-image">
-        <img src="../images/title.jpg" />
+        <img src="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/title.jpg" />
         <span class="card-title">
           ${intern.name}
           <br>
@@ -93,7 +93,7 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="../images/team.png" type="image/png">
+  <link rel="shortcut icon" href="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/team.png" type="image/png">
 
   <!-- Linking Materialize Icons Library -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -118,7 +118,7 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
   <main>
   <div class="parallax-container">
     <div class="parallax">
-      <img src="../images/team1.jpg" />
+      <img src="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/team1.jpg" />
     </div>
   </div>
   <div class="section grey darken-3 white-text">
@@ -130,7 +130,7 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
     </div>
     <div class="parallax-container">
       <div class="parallax">
-        <img src="../images/team2.jpg"/>
+        <img src="https://github.com/Muiasar-Al-Ani/BackEnd-Team-Profile-Generator/blob/main/images/team2.jpg"/>
       </div>
     </div>
     </main>
